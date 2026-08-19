@@ -6,8 +6,6 @@ class Solution(object):
         """
 
         new = []
-
-        # Same consecutive numbers ko ek hi baar rakhenge
         for num in nums:
             if len(new) == 0 or new[-1] != num:
                 new.append(num)
