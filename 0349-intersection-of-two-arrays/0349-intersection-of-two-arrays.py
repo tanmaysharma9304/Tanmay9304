@@ -6,12 +6,15 @@ class Solution(object):
         :rtype: List[int]
         """
 
+        seen = {}
+
+        for num in nums1:
+            seen[num] = 1
+
         common = []
 
-        for i in range(len(nums1)):
-            for j in range(len(nums2)):
-                if nums1[i] == nums2[j]:
-                    if nums1[i] not in common:
-                        common.append(nums1[i])
+        for num in nums2:
+            if num in seen and num not in common:
+                common.append(num)
 
         return common
